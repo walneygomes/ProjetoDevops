@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: mongo:3.4
+  back:
+    image: node:8.1
+    volumes:
+      - ./backend/:/backend
+    ports:
+      - 9009:9009
+    command: bash -c "cd /backend && npm i && node app"
+    environment:
+       - PORTA=9000
+       - DATABASE_URL='mongodb://db/gamelojawalney'
+  frontend1:
+    image: nginx:1.13
+    volumes:
+      - ./fronten/:/usr/share/nginx/html/
+    environment:
+     - DATABASE_DADOS='http://localhost:9009/produtos'
+    ports:
+      - 30039:80

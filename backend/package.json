@@ -1,0 +1,40 @@
+{
+  "name": "walney",
+  "version": "1.0.0",
+  "description": "projeto www",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "app.js",
+    "run": "app.js",
+    "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
+    "serve:ssr": "node dist/server",
+    "build:client-and-server-bundles": "ng build --prod && ng run angular.io-example:server",
+    "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
+    "build": "./node_modules/.bin/webpack --config webpack.conf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-mongoose": "^0.1.0",
+    "lodash": "^4.17.20",
+    "mongoose": "^5.10.15",
+    "node-restful": "^0.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/github.com/walneygomes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/github.com/walneygomes/issues"
+  },
+  "homepage": "https://github.com/github.com/walneygomes#readme"
+}
